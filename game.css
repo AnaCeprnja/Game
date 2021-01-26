@@ -2,6 +2,7 @@
   background-color: black;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+
 h1 {
   color: rgb(202, 202, 36);
   font-size: 80px;
@@ -34,12 +35,12 @@ button.sB {
 }
 
 .crib {
-  flex: 1 40.33%;
+  flex: 1 40 %;
   overflow: hidden;
   position: relative;
 }
 
-.crib:after {
+.crib: after {
   display: block;
   background: url(./img/il_794xN.2475727227_bzb5.png) bottom center no-repeat;
   background-size: contain;
@@ -60,4 +61,7 @@ button.sB {
   width: 150%;
   height: 100%;
   transition: all 0.25s;
+}
+.crib .up .yoda {
+  top: 0;
 }
