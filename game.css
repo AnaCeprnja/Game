@@ -27,41 +27,16 @@ button.sB {
   font-size: 80px;
 }
 .play {
-  width: 600px;
   height: 400px;
+  height: 400px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
 }
-
-.crib {
-  flex: 1 40 %;
-  overflow: hidden;
-  position: relative;
-}
-
-.crib: after {
-  display: block;
-  background: url(./img/il_794xN.2475727227_bzb5.png) bottom center no-repeat;
-  background-size: contain;
-  content: "";
-  width: 150%;
-  height: 100px;
-  position: absolute;
-  z-index: 2;
-  bottom: -30px;
-}
-
-.yoda {
-  background: url(./img/grogu-baby-yoda-the-child-1606497947.png) bottom center
-    no-repeat;
-  background-size: 60%;
-  position: absolute;
-  top: 100%;
-  width: 150%;
-  height: 100%;
-  transition: all 0.25s;
-}
-.crib .up .yoda {
-  top: 0;
+.row {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 }
