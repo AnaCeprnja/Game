@@ -1,42 +1,65 @@
 * {
   background-color: black;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-image: url(./img/BANNERstarwars3.jpg);
+  background-size: auto;
+}
+h1 {
+  text-align: center;
+  font-size: 60px;
+  color: rgb(204, 201, 22);
 }
 
-h1 {
-  color: rgb(202, 202, 36);
-  font-size: 80px;
-  text-align: center;
-}
-button.sB {
-  margin: 30px auto 0;
-  display: block;
-  background: rgb(202, 202, 36);
+#score {
   color: black;
-  border-radius: 6px;
-  font-size: 50px;
-  padding: 8px 36px;
+  background: rgb(204, 201, 22);
+  padding: 10px;
+}
+button.play {
+  margin: 20px auto 0;
+  border-radius: 5px;
+  font-size: 30px;
+  padding: 8px 40px;
   cursor: pointer;
-}
-.score {
-  margin: 20px;
-  background: rgb(202, 202, 36);
+  display: block;
   color: black;
-  padding: 30px;
-  border-radius: 10px;
-  font-size: 80px;
+  background: rgb(204, 201, 22);
 }
-.play {
+
+.crib {
+  flex: 30 28%;
+  overflow: hidden;
+  position: relative;
+}
+
+.crib:after {
+  display: block;
+  background: url(./img/il_794xN.2475727227_bzb5.png) bottom center no-repeat;
+  background-size: contain;
+  content: "";
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  top: 60px;
+  padding: 2px 2px;
+}
+.crib.up .yoda {
+  top: 0;
+}
+
+.yoda {
+  background: url(./img/grogu-baby-yoda-the-child-1606497947.png) bottom center
+    no-repeat;
+  background-size: 40%;
+  position: absolute;
+  transition: all 0.4s;
+  top: 200px;
+  width: 220px;
+  height: 100px;
+}
+.game {
+  margin: auto;
+  width: 1000px;
   height: 400px;
-  height: 400px;
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-}
-.row {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
 }
