@@ -10,10 +10,21 @@ let cribs = document.querySelectorAll('.crib'),
 amountOfPoints = document.querySelector('.score'),
 yodas = document.querySelectorAll('.yoda');
 
-if (x <= 10) {
-  console.log("you win!");
-}else {
-  console.log("You lost!");
-}
-}
+
+
+let yodaCrib,
+playerDone = false,
+score = 0;
+loss = 0;
+win = 0; 
+
+
+// function minMax(min, max) {
+//   const min = 0,
+//     max = 1;
+//   let rand = Math.floor(Math.random() * (max - min + 1) + min); 
+//   console.log('starting' + rand );
+//   setTimeout(myFunction, rand * 1000);
+
+
 
