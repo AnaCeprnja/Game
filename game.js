@@ -13,6 +13,7 @@ let yodas = document.querySelectorAll('.yoda');
 
 
 
+
 let count = 0;
 let yodaCrib,
 playerDone = false,
@@ -56,8 +57,8 @@ function playy(){
   amountOfPoints.textContent = 0;
   playerDone = false;
   pop();
-  setTimeout(()=> playerDone = true, 60000);
-  button.style.visibility = 'hidden';
+  setTimeout(()=> playerDone = true, 30000);
+  play.style.visibility = 'hidden';
   pop();
     
   }
@@ -78,12 +79,12 @@ setTimeout(()=> {
   amountOfPoints.textContent = 0;
   playerDone = false;
   score = 0;
-  button.style.visibility = 'hidden';
+  play.style.visibility = 'hidden';
   pop();
   setTimeout(() => {
     playerDone = true;
-    button.innerHTML = 'Try again?'
-    button.style.visibility = 'visible';
+    play.innerHTML = 'Try again?'
+    play.style.visibility = 'visible';
   }, 60000);
 } */
 
@@ -100,7 +101,10 @@ function catchh(e) {
   this.classList.remove('up');
   amountOfPoints.textContent = score;
 }
-play.addEventListener('click', playGame);
+play.addEventListener('click', playy);
+
+
+
 
 
 
@@ -111,5 +115,7 @@ play.addEventListener('click', playGame);
 //     window.alert("You won!");
 //   } else{
 //    window.alert ("You lost!");}}
+
+
 
  
