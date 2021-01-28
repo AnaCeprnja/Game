@@ -28,3 +28,21 @@ win = 0;
 
 
 
+function minMax(min, max){
+return Math.round( Math.random() * (max - min) + min);
+}
+
+function anyCrib(cribs){
+const idx = Math.floor(Math.random() * cribs.length),
+      crib = cribs[idx];
+
+
+
+//function didYouWin (score) {
+  document.getElementById ("score");
+  if (score >= 10) {
+    window.alert("You won!");
+  } else{
+   window.alert ("You lost!");}}
+
+ 
