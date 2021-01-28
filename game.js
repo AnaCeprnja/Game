@@ -6,17 +6,19 @@ crib, score, and yoda */
 // pick random crib for yoda to pop out of
 //holes node list
 
-let cribs = document.querySelectorAll('.crib'),
-amountOfPoints = document.querySelector('.score'),
-yodas = document.querySelectorAll('.yoda');
+let cribs = document.querySelectorAll('.crib');
+let amountOfPoints = document.querySelector('.score');
+let yodas = document.querySelectorAll('.yoda');
 
 
 
+
+let count = 0;
 let yodaCrib,
 playerDone = false,
 score = 0;
-loss = 0;
-win = 0; 
+
+
 
 
 // function minMax(min, max) {
@@ -26,23 +28,88 @@ win = 0;
 //   console.log('starting' + rand );
 //   setTimeout(myFunction, rand * 1000);
 
+function catchh() {
 
-
-function minMax(min, max){
-return Math.round( Math.random() * (max - min) + min);
+  count ++;
+  score.innerHTML = count;
+  console.log('catchh');
 }
+
+
+yodas.forEach(yoda=>yoda.addEventListener('click', catchh));
+function minMax(min, max){
+return Math.round( Math.random() * (max - min) + min);}
 
 function anyCrib(cribs){
 const idx = Math.floor(Math.random() * cribs.length),
-      crib = cribs[idx];
+crib = cribs[idx];
+console.log(crib);
+
+if(crib === yodaCrib){
+   return anyCrib(cribs);
+}
+yodaCrib = crib;
+return crib;
+}
+
+function playy(){
+  amountOfPoints.textContent = 0;
+  playerDone = false;
+  pop();
+  setTimeout(()=> playerDone = true, 60000);
+  button.style.visibility = 'hidden';
+  pop();
+    
+  }
+function pop(){
+const done = minMax(400,600),
+      crib =  anyCrib(cribs);
+
+crib.classList.add('up');
+setTimeout(()=> {
+    crib.classList.remove('up');
+    if(!playerDone) pop();
+}, done);
+
+}
+
+
+/*function playy() {
+  amountOfPoints.textContent = 0;
+  playerDone = false;
+  score = 0;
+  button.style.visibility = 'hidden';
+  pop();
+  setTimeout(() => {
+    playerDone = true;
+    button.innerHTML = 'Try again?'
+    button.style.visibility = 'visible';
+  }, 60000);
+} */
+
+
+
+function yodaDown(){
+  console.log(e);
+this.classList.remove('yodaCaught');
+}
+
+function catchh(e) {
+  if(!e.isTrusted) return;
+  score++;
+  this.classList.remove('up');
+  amountOfPoints.textContent = score;
+}
+play.addEventListener('click', playGame);
+
 
 
 
 //function didYouWin (score) {
-  document.getElementById ("score");
-  if (score >= 10) {
-    window.alert("You won!");
-  } else{
-   window.alert ("You lost!");}}
+//   document.getElementById ("score");
+//   if (score >= 10) {
+//     window.alert("You won!");
+//   } else{
+//    window.alert ("You lost!");}}
 
  
