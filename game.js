@@ -53,13 +53,14 @@ yodaCrib = crib;
 return crib;
 }
 
+
 function playy(){
   amountOfPoints.textContent = 0;
   playerDone = false;
   pop();
   setTimeout(()=> playerDone = true, 30000);
-  play.style.visibility = 'hidden';
-  pop();
+  console.log(`value of score ${score}`)
+  
     
   }
 function pop(){
@@ -88,12 +89,18 @@ setTimeout(()=> {
   }, 60000);
 } */
 
-
+if (score >=10) {
+  confirm ("you won!");
+} else if (score <=9) {
+  confirm ("you lost");
+}
 
 function yodaDown(){
   console.log(e);
 this.classList.remove('yodaCaught');
 }
+
+
 
 function catchh(e) {
   if(!e.isTrusted) return;
@@ -102,7 +109,7 @@ function catchh(e) {
   amountOfPoints.textContent = score;
 }
 play.addEventListener('click', playy);
-
+ 
 
 
 
@@ -115,7 +122,3 @@ play.addEventListener('click', playy);
 //     window.alert("You won!");
 //   } else{
 //    window.alert ("You lost!");}}
-
-
-
- 
