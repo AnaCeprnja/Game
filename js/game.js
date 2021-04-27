@@ -4,7 +4,7 @@ crib, score, and yoda */
 // set timer 
 
 // pick random crib for yoda to pop out of
-//holes node list
+//holes node list list
 
 let cribs = document.querySelectorAll('.crib');
 let amountOfPoints = document.querySelector('.score');
