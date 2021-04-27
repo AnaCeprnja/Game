@@ -16,8 +16,8 @@ let yodas = document.querySelectorAll('.yoda');
 
 let count = 0;
 let yodaCrib,
-playerDone = false,
-score = 0;
+  playerDone = false,
+  score = 0;
 
 
 
@@ -31,47 +31,48 @@ score = 0;
 
 function catchh() {
 
-  count ++;
+  count++;
   score.innerHTML = count;
   console.log('catchh');
 }
 
 
-yodas.forEach(yoda=>yoda.addEventListener('click', catchh));
-function minMax(min, max){
-return Math.round( Math.random() * (max - min) + min);}
-
-function anyCrib(cribs){
-const idx = Math.floor(Math.random() * cribs.length),
-crib = cribs[idx];
-console.log(crib);
-
-if(crib === yodaCrib){
-   return anyCrib(cribs);
-}
-yodaCrib = crib;
-return crib;
+yodas.forEach(yoda => yoda.addEventListener('click', catchh));
+function minMax(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
 }
 
+function anyCrib(cribs) {
+  const idx = Math.floor(Math.random() * cribs.length),
+    crib = cribs[idx];
+  console.log(crib);
 
-function playy(){
+  if (crib === yodaCrib) {
+    return anyCrib(cribs);
+  }
+  yodaCrib = crib;
+  return crib;
+}
+
+
+function playy() {
   amountOfPoints.textContent = 0;
   playerDone = false;
   pop();
-  setTimeout(()=> playerDone = true, 30000);
+  setTimeout(() => playerDone = true, 30000);
   console.log(`value of score ${score}`)
-  
-    
-  }
-function pop(){
-const done = minMax(400,600),
-      crib =  anyCrib(cribs);
 
-crib.classList.add('up');
-setTimeout(()=> {
+
+}
+function pop() {
+  const done = minMax(400, 600),
+    crib = anyCrib(cribs);
+
+  crib.classList.add('up');
+  setTimeout(() => {
     crib.classList.remove('up');
-    if(!playerDone) pop();
-}, done);
+    if (!playerDone) pop();
+  }, done);
 
 }
 
@@ -89,27 +90,27 @@ setTimeout(()=> {
   }, 60000);
 } */
 
-if (score >=10) {
-  confirm ("you won!");
-} else if (score <=9) {
-  confirm ("you lost");
-}
+//if (score >=10) {
+// confirm ("you won!");
+//} else if (score <=9) {
+// confirm ("you lost");
+//}
 
-function yodaDown(){
+function yodaDown() {
   console.log(e);
-this.classList.remove('yodaCaught');
+  this.classList.remove('yodaCaught');
 }
 
 
 
 function catchh(e) {
-  if(!e.isTrusted) return;
+  if (!e.isTrusted) return;
   score++;
   this.classList.remove('up');
   amountOfPoints.textContent = score;
 }
 play.addEventListener('click', playy);
- 
+
 
 
 
